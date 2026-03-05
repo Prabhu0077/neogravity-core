@@ -18,7 +18,16 @@
         "agentic",
         "os",
         "mcp",
-        "vibcoder"
+        "vibcoder",
+        "antigravity",
+        "cursor",
+        "windsurf",
+        "llm",
+        "copilot",
+        "developer-tools",
+        "workflow-automation",
+        "devops",
+        "memory"
     ],
     "author": "Prabhakar Chandra",
     "license": "UNLICENSED",
