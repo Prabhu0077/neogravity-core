@@ -1,0 +1,39 @@
+{
+  "name": "@vibcoder/neogravity",
+  "version": "4.0.0",
+  "description": "The Sovereign Agentic Operating System. Autonomous AI workspace tools.",
+  "main": "index.js",
+  "bin": {
+    "neogravity": "index.js"
+  },
+  "scripts": {
+    "build": "echo 'No build required for pure node CLI scripts'",
+    "lint": "echo 'No linter set for JS scripts currently'",
+    "test": "echo 'No tests specified' && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Prabhu0077/neogravity-core.git"
+  },
+  "keywords": [
+    "ai",
+    "agentic",
+    "os",
+    "mcp",
+    "vibcoder",
+    "antigravity",
+    "cursor",
+    "windsurf",
+    "llm",
+    "copilot",
+    "developer-tools",
+    "workflow-automation",
+    "devops",
+    "memory"
+  ],
+  "author": "Prabhakar Chandra",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^11.3.4"
+  }
+}

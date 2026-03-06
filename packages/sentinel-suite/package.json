@@ -1,0 +1,11 @@
+{
+  "name": "sentinel-suite",
+  "version": "1.0.0",
+  "author": "Prabhakar Chandra",
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'Sentinel suite build pending'",
+    "lint": "echo 'No linter set'",
+    "test": "echo 'No test set' && exit 0"
+  }
+}

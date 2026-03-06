@@ -1,0 +1,25 @@
+{
+  "name": "neogravity-core-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Sovereign Agentic Operating System Monorepo",
+  "author": "Prabhakar Chandra",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,js,md,json}\"",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

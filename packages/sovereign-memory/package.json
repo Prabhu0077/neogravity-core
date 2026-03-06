@@ -1,0 +1,11 @@
+{
+  "name": "sovereign-memory",
+  "version": "1.0.0",
+  "author": "Prabhakar Chandra",
+  "license": "MIT",
+  "scripts": {
+    "build": "echo 'Python build: Building docker image or setting up venv'",
+    "lint": "echo 'No python linter configured yet'",
+    "test": "echo 'No tests configured yet' && exit 0"
+  }
+}

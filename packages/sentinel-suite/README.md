@@ -2,8 +2,8 @@
 
 **Product Tier 3:** The Ultimate Autonomous Engineering Lab.
 
-*Target Audience: Senior Architects, Elite Teams, and Quants.* 
-*Price: $49/mo or $499/year.*
+_Target Audience: Senior Architects, Elite Teams, and Quants._
+_Price: $49/mo or $499/year._
 
 ## Overview
 
@@ -15,18 +15,19 @@ When you purchase the Sentinel Suite, you receive two interconnected sub-systems
 
 1. **NeoGravity Core (The Agentic OS)**
    Installed globally via `npx @vibcoder/neogravity init`. It provides the `projects.json` registry, the `.knowledge` state machine, and the Powershell cron watchdogs.
-   
 2. **Sovereign Memory (The Brain)**
    Installed securely via our automated deployment script `install.ps1`. It provisions a robust, fully-local, containerized memory backend powered by Neo4j, ChromaDB, and GraphRAG.
 
 ## Installation
 
 1. First, scaffold the Operating System into your active workspace:
+
    ```bash
    npx @vibcoder/neogravity init
    ```
 
 2. Second, navigate to the `memory` folder and run the backend installer:
+
    ```powershell
    .\install.ps1
    ```

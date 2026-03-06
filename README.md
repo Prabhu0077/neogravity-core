@@ -5,7 +5,7 @@
   <i>Turn your AI IDE (Antigravity, Cursor, Windsurf) into a self-healing, decision-aware engineering lab.</i>
 </div>
 
-NeoGravity is a **local-first Agentic Operating System** that lives inside your workspace. It doesn't write code for you — it manages the *infrastructure around your AI assistant*: context persistence, architectural enforcement, multi-session memory, and workflow orchestration.
+NeoGravity is a **local-first Agentic Operating System** that lives inside your workspace. It doesn't write code for you — it manages the _infrastructure around your AI assistant_: context persistence, architectural enforcement, multi-session memory, and workflow orchestration.
 
 ## Why NeoGravity?
 
@@ -36,7 +36,7 @@ your-project/
 └── projects.json     # multi-project registry
 ```
 
-```
+````
 
 ---
 
@@ -50,11 +50,11 @@ By installing NeoGravity Core, you provide your AI with a persistent "exocortex.
 
 ### How to use it:
 
-1. **The Context Anchor:** At the start of every chat session with your AI, simply type:  
+1. **The Context Anchor:** At the start of every chat session with your AI, simply type:
    > *“Read my `projects.json` and `.knowledge/tasks/active_tasks.md` before doing anything.”*
-2. **Workflow Triggers:** Instead of asking the AI to "deploy my app" and watching it stumble, type:  
+2. **Workflow Triggers:** Instead of asking the AI to "deploy my app" and watching it stumble, type:
    > *“Run the `/deploy` workflow found in `.agents/workflows/deploy.md`.”*
-3. **Skill Enforcement:** Need the AI to write a specific way? Tell it:  
+3. **Skill Enforcement:** Need the AI to write a specific way? Tell it:
    > *“Load the `elite-vocabulary` skill from `.agents/skills/` before drafting this email.”*
 
 ---
@@ -66,27 +66,27 @@ graph TD
     UI[AI IDE - Antigravity/Cursor] -->|Reads| KG[.knowledge/ <br>Persistent State]
     UI -->|Executes| WF[.agents/workflows/ <br>Runbooks]
     UI -->|Enforces| SK[.agents/skills/ <br>Pre-flight Rules]
-    
+
     subwatch[Background Processes]
     CRON[PowerShell Watchdogs] -->|Monitors Health| UI
     CRON -->|Consolidates| KG
-    
+
     style UI fill:#2d3436,stroke:#00b894,stroke-width:2px,color:#fff
     style KG fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
     style WF fill:#6c5ce7,stroke:#a29bfe,stroke-width:2px,color:#fff
     style SK fill:#e84393,stroke:#fd79a8,stroke-width:2px,color:#fff
     style CRON fill:#d63031,stroke:#ff7675,stroke-width:2px,color:#fff
-```
+````
 
 ---
 
 ## 💎 Product Tiers
 
-| Tier | What You Get | Price |
-|---|---|---|
-| **NeoGravity Core** | Workflows, skills, crons, `.knowledge/` state machine | **Free** (MIT) |
-| **Sovereign Memory** | Neo4j + MoE routing + ChromaDB + local LLM memory | Coming Soon |
-| **Sentinel Suite** | Full OS + Sovereign Memory — total autonomy | Coming Soon |
+| Tier                 | What You Get                                          | Price          |
+| -------------------- | ----------------------------------------------------- | -------------- |
+| **NeoGravity Core**  | Workflows, skills, crons, `.knowledge/` state machine | **Free** (MIT) |
+| **Sovereign Memory** | Neo4j + MoE routing + ChromaDB + local LLM memory     | Coming Soon    |
+| **Sentinel Suite**   | Full OS + Sovereign Memory — total autonomy           | Coming Soon    |
 
 ## Architecture
 
