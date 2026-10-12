@@ -1,71 +1,26 @@
 ---
 name: Session Handoff
-description: Patterns for preserving and restoring context across sessions — what to capture at session-end, how to recall at boot. Load during bootstrap and shutdown.
+description: How to leave notes so the next session (yours or a teammate's) can continue without re-asking. Load at session start and end.
 ---
 
-# Session Handoff — Cross-Session Context Preservation
+# Session handoff
 
-Load this skill during session boot (bootstrap) and session-end (shutdown protocol) to ensure nothing is lost between sessions.
+An AI assistant forgets everything when a chat ends. Files do not. The handoff is
+three small files you keep up to date:
 
-## The Volatility Problem
+| File | What it holds | How it changes |
+| --- | --- | --- |
+| `.knowledge/tasks/active_tasks.md` | What is done, in progress, next | Edited every session |
+| `.knowledge/decisions/NNNN-title.md` | Why we chose X over Y | One new file per decision, never edited later |
+| `.agents/rules/project-context.md` | How the assistant should behave | Edited rarely |
 
-- `session_log.md` is **overwritten** each session → only last session survives
-- `decision_log.md` is **append-only** → grows forever, hard to search
-- Memory MCP graph is **static** → good for stable facts, bad for session context
-- **Sovereign Memory** is the permanent semantic store → survives indefinitely, searchable
+## Good handoff notes
 
-## Session-End Capture Template
+- Say what you did **and how you checked it**: "fixed login redirect, ran `npm test`, 12 pass".
+- Name files by path, not "that file".
+- For anything the user must do by hand, give the command, what it does, and why you could not run it.
 
-At session end, ingest two things:
+## Bad handoff notes
 
-### 1. Session Summary
-
-```
-memory_ingest(
-  text: "Session YYYY-MM-DD: [what was accomplished]. Key changes: [files modified]. Next step: [immediate priority].",
-  source: "session-YYYY-MM-DD",
-  intent: "session"
-)
-```
-
-### 2. Decisions Made (if any)
-
-```
-memory_ingest(
-  text: "Decision: [what was decided]. Rationale: [why]. Alternatives rejected: [what else was considered].",
-  source: "decision-YYYY-MM-DD",
-  intent: "decision"
-)
-```
-
-**Skip silently** if Sovereign Memory is OFFLINE.
-
-### 3. Pending User Actions (if any)
-
-When writing `session_log.md → Pending User Action`, ALWAYS include:
-
-- **What** the command/action does (plain English)
-- **Why** it couldn't be done automatically (e.g., needs admin, needs hardware, needs user decision)
-- The command itself
-
-**Bad:** `- Run scripts/register_cron_jobs.ps1 as admin`
-**Good:** `- Run scripts/register_cron_jobs.ps1 as admin — this registers 4 Windows Scheduled Tasks (harvest watchdog, naukri reminder, SM consolidation, project scanner). Requires admin because schtasks needs elevated privileges.`
-
-## Boot Recall Pattern
-
-At session boot (after Sovereign Memory status check):
-
-```
-memory_query("key decisions and changes from recent sessions")
-→ Surface top-3 results in status report under "Deep Recall"
-→ This recovers context that session_log.md may have lost
-```
-
-## Source Naming Convention
-
-```
-<category>-<YYYY-MM-DD>     (for date-scoped events)
-<category>-<identifier>     (for entity-scoped items)
-```
-
-Examples: `session-2026-03-05`, `decision-2026-03-05`, `outreach-towerresearch-2026-03-05`
+- "Worked on auth." (what, and is it finished?)
+- Secrets, tokens or passwords. Name the variable instead: "set `STRIPE_KEY` in the host dashboard".

@@ -1,39 +1,46 @@
 {
   "name": "@vibcoder/neogravity",
-  "version": "4.0.0",
-  "description": "The Sovereign Agentic Operating System. Autonomous AI workspace tools.",
+  "version": "4.1.0",
+  "description": "Scaffold persistent context (task list, decision log, workflows, skills) for AI coding assistants like Cursor, Windsurf and Claude Code.",
   "main": "index.js",
   "bin": {
     "neogravity": "index.js"
   },
+  "files": [
+    "index.js",
+    "template",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "build": "echo 'No build required for pure node CLI scripts'",
-    "lint": "echo 'No linter set for JS scripts currently'",
-    "test": "echo 'No tests specified' && exit 0"
+    "build": "node -e \"console.log('nothing to build')\"",
+    "lint": "node --check index.js",
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Prabhu0077/neogravity-core.git"
+    "url": "git+https://github.com/Prabhu0077/neogravity-core.git",
+    "directory": "packages/neogravity-cli"
+  },
+  "homepage": "https://bodhamlabs.com/research/agent-context-tooling",
+  "bugs": {
+    "url": "https://github.com/Prabhu0077/neogravity-core/issues"
   },
   "keywords": [
-    "ai",
-    "agentic",
-    "os",
-    "mcp",
-    "vibcoder",
-    "antigravity",
+    "ai-coding",
+    "agents",
+    "context",
     "cursor",
     "windsurf",
+    "claude-code",
     "llm",
-    "copilot",
-    "developer-tools",
-    "workflow-automation",
-    "devops",
-    "memory"
+    "scaffold",
+    "developer-tools"
   ],
-  "author": "Prabhakar Chandra",
+  "author": "Prabhakar Chandra <prabhakar@bodhamlabs.com> (https://bodhamlabs.com)",
   "license": "MIT",
-  "dependencies": {
-    "fs-extra": "^11.3.4"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

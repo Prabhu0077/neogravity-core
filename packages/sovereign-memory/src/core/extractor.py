@@ -1,7 +1,7 @@
 """
 GLiNER Entity Extractor
 
-Zero-hallucination Named Entity Recognition using contrastive learning.
+Extractive Named Entity Recognition (it can only return text that is in the input) using contrastive learning.
 Replaces the placeholder heuristic in the original ingestion_service.py (L42-71)
 that just split on uppercase words.
 

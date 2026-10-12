@@ -2,7 +2,7 @@
   "name": "neogravity-core-monorepo",
   "version": "1.0.0",
   "private": true,
-  "description": "The Sovereign Agentic Operating System Monorepo",
+  "description": "Tools that help AI coding assistants keep context between sessions",
   "author": "Prabhakar Chandra",
   "license": "MIT",
   "workspaces": [
